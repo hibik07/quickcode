@@ -17,7 +17,7 @@ def perform_regression(df, independent_var, dependent_var):
     model = sm.OLS(y, x).fit()
     
     if model.pvalues[independent_var]<=0.05:
-        result=f"independent:{independent_var},dependent:{dependent_var},and p-value is {model.pvalues[independent_var]}"
+        result=f"independent:{independent_var}, dependent:{dependent_var}, p-value is {model.pvalues[independent_var]}, coefficient is {model.params[independent_var]}"
         #print(model.summary())        
         return result
     else:
